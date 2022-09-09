@@ -54,7 +54,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const login = () => {
+const Login = () => {
   const [payload, setPayload] = useState({ username: "", password: "" });
   const loginContext = useContext(context);
   const router = useRouter();
@@ -95,4 +95,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;

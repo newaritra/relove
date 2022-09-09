@@ -56,7 +56,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const register = () => {
+const Register = () => {
   const [payload, setPayload] = useState({ username: "", password: "" });
   const router = useRouter();
   const loginContext = useContext(context)
@@ -91,4 +91,4 @@ const register = () => {
   );
 };
 
-export default register;
+export default Register;
