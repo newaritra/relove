@@ -1,6 +1,6 @@
 const BASE_URL =
   process.env.NODE_ENV === "production"
-    ? process.env.BASE_URL
+    ? "https://relove.vercel.app/api"
     : "http://localhost:3000/api";
 
 export { BASE_URL };
