@@ -71,6 +71,7 @@ const Login = () => {
         loginContext.setUserData(res.data);
       }
     } catch (err) {
+      router.push("/register");
       console.log(err);
     }
   };
@@ -91,6 +92,10 @@ const Login = () => {
         />
       </div>
       <StyledButton type="submit">Submit</StyledButton>
+      <Label>OR</Label>
+      <StyledButton onClick={() => router.push("/register")}>
+        Resgister
+      </StyledButton>
     </RegisterContainer>
   );
 };

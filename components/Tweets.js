@@ -154,6 +154,9 @@ const Tweets = ({ data, setData }) => {
           Submit
         </StyledButton>
       </InputContainer>
+      {data?.feedData.length == 0 && (
+        <p style={{ textAlign: "center" }}>Follow Users To View Tweets!</p>
+      )}
       {data?.feedData.map((item, index) => (
         <React.Fragment key={index}>
           <div
