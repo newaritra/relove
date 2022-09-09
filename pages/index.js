@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+import { useRouter } from "next/router";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
@@ -16,13 +16,19 @@ const Container = styled.div`
 
 export default function Home() {
   const [data, setData] = useState(null);
+  const router = useRouter();
   useEffect(() => {
     (async () => {
-      const res = await axios.post(`${BASE_URL}/feed`, {
-        token: localStorage.getItem("token"),
-      });
-      console.log(res.data);
-      setData(res.data);
+      try {
+        const res = await axios.post(`${BASE_URL}/feed`, {
+          token: localStorage.getItem("token"),
+        });
+        console.log(res.data);
+        setData(res.data);
+      } catch (err) {
+        console.log(err);
+        router.replace("/login");
+      }
     })();
   }, []);
   return (
