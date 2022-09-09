@@ -31,6 +31,7 @@ async function handler(req, res) {
       const payload = { userData, feedData, recommendedUsers };
       return res.json(payload);
     } catch (err) {
+      console.log(err);
       res.status(401).json({ err });
     }
   } else {
